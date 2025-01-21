@@ -215,17 +215,13 @@ dist/
 !.gitignore
 !README.md
 
-# Include specific Python files in 01-tiny-projects
-!01-tiny-projects/
-!01-tiny-projects/038-rht-file-naming.py
-!01-tiny-projects/040-replace-string-or-chars-in-filename.py
-!01-tiny-projects/008-virtual-machines-operations.py
 
-# Exclude everything else in 01-tiny-projects
-01-tiny-projects/*
-!01-tiny-projects/038-rht-file-naming.py
-!01-tiny-projects/040-replace-string-or-chars-in-filename.py
-!01-tiny-projects/008-virtual-machines-operations.py
+# Include Python Files 01-tiny-projects
+
+!003-image-crop.py
+!038-rht-file-naming.py
+!040-replace-string-or-chars-in-filename.py
+!008-virtual-machines-operations.py
 
 ### Ignore any file or folder that contains 'exclude' in its name
 *omit*
