@@ -208,17 +208,21 @@ output/
 dist/
 .cache/
 
-### Ignore Everything in Current Directory
+# Ignore everything by default
 *
 
-### Include default files to Sync
+# Include .gitignore and README.md explicitly
 !.gitignore
 !README.md
 
+# Include specific Python files in 01-tiny-projects
+!01-tiny-projects/
+!01-tiny-projects/038-rht-file-naming.py
+!01-tiny-projects/040-replace-string-or-chars-in-filename.py
+!01-tiny-projects/008-virtual-machines-operations.py
 
-### Include Ansible Project Files or Folders
-
-### Include Python Project Files or Folders
+# Exclude everything else in 01-tiny-projects
+01-tiny-projects/*
 !01-tiny-projects/038-rht-file-naming.py
 !01-tiny-projects/040-replace-string-or-chars-in-filename.py
 !01-tiny-projects/008-virtual-machines-operations.py
