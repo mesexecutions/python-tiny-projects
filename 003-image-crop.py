@@ -5,7 +5,7 @@ from typing import Counter
 from modules.custom_functions import get_black_color
 
 '''
-    AUHTOR: ramepetla (at) g m a i l . c o m
+    AUHTOR: r a m e p e t l a (at) g m a i l . c o m
             R A M E S H  P E T L A
      Version: 0.1
      Python: 3.9.0
