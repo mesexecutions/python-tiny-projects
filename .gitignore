@@ -219,9 +219,9 @@ dist/
 ### Include Ansible Project Files or Folders
 
 ### Include Python Project Files or Folders
-# !01-tiny-projects/038-rht-file-naming.py
-# !01-tiny-projects/040-replace-string-or-chars-in-filename.py
-# !01-tiny-projects/008-virtual-machines-operations.py
+!01-tiny-projects/038-rht-file-naming.py
+!01-tiny-projects/040-replace-string-or-chars-in-filename.py
+!01-tiny-projects/008-virtual-machines-operations.py
 
 ### Ignore any file or folder that contains 'exclude' in its name
 *omit*
