@@ -44,7 +44,7 @@ Step by Step tasks to be executed by this Program
 Variables that can be changed
 '''
 # Blank PDF Document
-blank_pdf = 'C:\\Storage\\my_drive\\workplace\\sysdata\\Downloads\\Redhat Official Training\\Blank.pdf'
+blank_pdf = 'C:\\Storage\\my_drive\\Redhat Official Training\\Blank.pdf'
 
 
 # \\ -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-  GLOBAL VARAIBELS
@@ -99,12 +99,25 @@ def fnamegeneration(title, chcode):
         chcode_dictkey = chcode + '01' + title[0][0:1] + str(re.split(r'[ .]', title[0])[2]).zfill(2)
 
  
-    # Process titles formatted like "\ Chapter 3: How Brain Works" to produce the final output in the format "Ch03title"
+    # # Process titles formatted like "\ Chapter 3: How Brain Works" to produce the final output in the format "Ch03title"
+
+    # elif 'Chapter' in title[0]:
+    #     chcode = title[0][0:2] + title[0][-1].zfill(2)
+    #     chcode_dictkey = chcode + 'atitle'
+
+    # Process titles formatted like "Chapter 3: How Brain Works" to produce the final output in the format "Ch03title"
 
     elif 'Chapter' in title[0]:
-        chcode = title[0][0:2] + title[0][-1].zfill(2)
-        chcode_dictkey = chcode + 'atitle'
+        
+        title_list = title[0].split()
+        chcode = title_list[1]
+        if len(chcode) >= 2:
+            chcode = title_list[1]
+        else:
+            chcode = title_list[1].zfill(2)
 
+        chcode = 'ch' + chcode
+        chcode_dictkey = chcode + 'atitle'
 
     # Process titles formatted like "Section 3.1: Managing Daily Routines" to produce the final output in the format "Ch03S01"
 
@@ -134,8 +147,10 @@ def rhtnamingfiles():
 
                 line = line.strip()
                 chcode_raw = fnamegeneration(line.split(':'), chcode_init)
+                print(chcode_raw)
                 chcode_init = chcode_raw[0]
                 tocdict[chcode_raw[1].lower()] = [line.replace(':', '')]
+
        
 
 # \\ Reads the contents of the current directory containing files with the format: Filename > DSMATH102 - ch06s11.pdf \\
