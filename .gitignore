@@ -222,7 +222,7 @@ dist/
 !038-rht-file-naming.py
 !040-replace-string-or-chars-in-filename.py
 !008-virtual-machines-operations.py
-
+!009-english-vocabulary-training-model.py
 ### Ignore any file or folder that contains 'exclude' in its name
 *omit*
 **/*omit*
