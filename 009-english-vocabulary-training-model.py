@@ -1,3 +1,34 @@
+#!/usr/bin/env python3
+
+'''	
+
+    AUTHOR: r a m e p e t l a [at] g m a i l  c o m
+            R A M E S H P E T L A
+            
+    VERSION: 0.1
+
+    WORKING ENVIRONMENT:
+
+        Python Version:
+        OS Version:
+    
+    PREREQUISITES:
+    
+    USAGE: 
+
+
+    INPUT INSTRUCTIONS: 
+
+        1)  
+
+
+    KNOWN ISSUES: 
+    
+
+    OUTCOME:
+
+'''
+
 from os import listdir, stat, utime
 from sqlite3.dbapi2 import Cursor
 import PyPDF2, sqlite3, os
