@@ -146,11 +146,17 @@ def dbs_csv(rec_file_data):
         stmt_tag = f"BANK-STMT-DBS-{date_obj.strftime('%b').upper()}-{date_obj.strftime('%Y')} "
         notes = stmt_tag + "Bank Transaction: " + str(row['Transaction Date']) + " Actual Transaction: " + \
               formatted_date + " " + "MetaData: " + row_text
-    
+        
+        try:
+            bc_formatted_date = datetime.strptime(formatted_date, "%d/%m/%Y")
+        except ValueError:
+            bc_formatted_date = datetime.strptime(formatted_date, "%m/%d/%Y")
+        
+        bc_formatted_date = bc_formatted_date.strftime("%d-%m-%Y")
 
         label = 'AddedByAutomationNonVerified MayBeDuplicateTransaction AddedByAutomationVerified SGDBS InSGD SGSGDExpense NonVerified AuditDBS AddedByAutomationOn01JULY2025 DBSAddedByImportingCSV AddedByAutomation' 
 
-        value = [ transaction_type, formatted_date, "Uncategorized Transaction", amount, "Excluded", "Uncategorized", "A_SINGAPORE", "DBS (SGD)", notes, label, "Cleared", "" ]
+        value = [ transaction_type, bc_formatted_date, "Uncategorized Transaction", amount, "Excluded", "Uncategorized", "A_SINGAPORE", "DBS (SGD)", notes, label, "C", "" ]
 
         if unique_list_item not in bankaccount_dict:
             bankaccount_dict[unique_list_item] = [value]
